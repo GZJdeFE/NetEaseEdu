@@ -1,9 +1,13 @@
 body{
+	margin: 0px;
 	font-family: Arial,微软雅黑;
 	font-size: 12px;
 }
 a{
 	color: #21a557;
+}
+p{
+	display: inline;
 }
 .prompt-bar{
 	width: 100%;
@@ -12,9 +16,14 @@ a{
 }
 .prompt-bar-content{
 	width: 1000px;
+	line-height: 36px;
 	margin-left: auto;
 	margin-right: auto;
 }
 .prompt-bar-close{
-	float: right;
+	display: inline;
+	right: 0;
+}
+.view_now{
+	padding-left: 7px;
 }
