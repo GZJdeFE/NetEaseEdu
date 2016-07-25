@@ -9,6 +9,9 @@ a{
 p{
 	display: inline;
 }
+li{
+	display: inline-block;
+}
 .prompt-bar{
 	width: 100%;
 	height:36px;
@@ -22,8 +25,27 @@ p{
 }
 .prompt-bar-close{
 	display: inline;
-	right: 0;
+	float: right;
 }
-.view_now{
+.view-now{
 	padding-left: 7px;
+}
+
+.header-content{
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.header-logo-en{
+	color: #39a030;
+	padding-right: 8px;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #39a030;
+}
+.header-content-logo{
+	display: inline;
+}
+.header-content-nav{
+	display: inline;
 }
