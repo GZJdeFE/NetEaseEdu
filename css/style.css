@@ -6,11 +6,13 @@ body{
 a{
 	color: #21a557;
 }
-p{
-	display: inline;
-}
 li{
 	display: inline-block;
+}
+
+/*顶部通知条*/
+.prompt-bar-text{
+	display: inline;
 }
 .prompt-bar{
 	width: 100%;
@@ -31,8 +33,10 @@ li{
 	padding-left: 7px;
 }
 
+/*导航头*/
 .header-content{
 	width: 1000px;
+	height: 89px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -43,9 +47,15 @@ li{
 	border-right-style: solid;
 	border-right-color: #39a030;
 }
+.header-logo-cn{
+	font-size: 22px;
+}
 .header-content-logo{
-	display: inline;
+	line-height: 89px;
 }
 .header-content-nav{
-	display: inline;
+	
+}
+.follow-fan{
+	margin-left: 10px;
 }
