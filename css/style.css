@@ -66,6 +66,11 @@ a{
 }
 .follow-button{
 	display: inline-block;
+	background-color: #21a557;
+	color: #fff;
+	padding: 0 8px;
+	border-radius: 2px;
+	line-height: 21px;
 }
 .fans-number{
 	display: inline-block;
@@ -94,14 +99,16 @@ a{
 /*轮播图*/
 .banner{
 	width: 100%;
-	height: 460px; 
+	height: 390px; 
 	position: relative;
 	margin: 0 auto;
 }
 .banner-images{
 	width: 100%;
 	list-style: none;
-	position: absolute;
+	position: relative;
+	margin: 0 0;
+	padding: 0 0;
 }
 .banner-points{
 	list-style: none;
@@ -111,6 +118,8 @@ a{
 	bottom: 20px;
 	width: 80px;
 	height: 10px;
+	margin: 0 0;
+	padding: 0 0;
 }
 .banner-point{
 	display: inline-block;
@@ -119,4 +128,39 @@ a{
 	height: 12px;
 	margin-right: 12px;
 	background-color: #ffffff;
+}
+.banner-image{
+	position: absolute;
+}
+.banner-image img{
+	width: 100%;
+}
+
+/*产品介绍*/
+.product-intro{
+	width: 1100px;
+	margin:20px auto;
+	padding-top: 30px;
+}
+.product-list{
+	list-style: none;
+}
+.product-list li{
+	display: inline-block;
+	width: 33%;
+}
+.product-img{
+	float: left;
+	width: 80px;
+	height: 80px;
+}
+.product-info{
+	float: right;
+	width: 220px;
+	margin-right: 30px;
+	font-size: 14px;
+}
+.product-info h3{
+	font-size: 22px;
+	margin: 10px 0;
 }
