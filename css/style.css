@@ -176,6 +176,76 @@ a{
 }
 
 /*内容区*/
+.content-area{
+	width: 1100px;
+	height: 1500px;
+	margin: 40px auto;
+	overflow: hidden;
+}
+.course-list{
+	width: 76%;
+	float: left;
+}
+.side-bar{
+	width: 22%;
+	float: right;
+	margin: 40px 0;
+}
+.tab-btn-place{
+	margin: 40px 0;
+}
+.tab-btn{
+	list-style: none;
+	display: inline-block;
+	margin-right: 20px;
+	width: 200px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 22px;
+	background-color: #fff;
+	box-shadow: 0 2px 2px #ccc;
+	cursor: pointer;
+}
+.organization-intro{
+	box-shadow: 0 2px 2px #ccc;
+	height: 250px;
+	width: 210px;
+	background-color: #fff;
+	padding-left: 20px;
+}
+.organization-intro h3{
+	font-size: 18px;
+	border-bottom: 1px solid #ecebeb;
+	background-color: #fff;
+	height: 50px;
+	line-height: 50px;
+	width: 190px;
+	margin: 0 0;
+}
+.organization-intro p{
+	padding-top: 5px;
+	font-size: 15px;
+}
+.hot-ranking{
+	margin-top: 20px;
+	width: 210px;
+	box-shadow: 0 2px 2px #ccc;
+	background-color: #fff;
+}
+.hot-ranking h3{
+	font-size: 18px;
+	padding-left: 20px;
+	border-bottom: 1px solid #ecebcb;
+	height: 50px;
+	line-height: 50px;
+	width: 190px;
+	margin: 0 0;
+}
+.hot-ranking-list{
+	margin-top: 5px 0;
+	padding-left: 20px;
+}
 
 /*底部*/
 .footer{
