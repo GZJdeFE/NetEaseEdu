@@ -103,14 +103,27 @@ a{
 	position: relative;
 	margin: 0 auto;
 }
-.banner-images{
+#banner-images{
 	width: 100%;
 	list-style: none;
 	position: relative;
 	margin: 0 0;
 	padding: 0 0;
 }
-.banner-points{
+.banner-image{
+	position: absolute;
+	opacity: 0;
+}
+.banner-image-active{
+	position: absolute;
+	opacity: 1;
+	transition: 1000ms opacity;
+}
+#banner-images img{
+	height: 390px;
+	width: 100%;
+}
+#banner-points{
 	list-style: none;
 	position: absolute;
 	z-index: 1000;
@@ -129,11 +142,13 @@ a{
 	margin-right: 12px;
 	background-color: #ffffff;
 }
-.banner-image{
-	position: absolute;
-}
-.banner-image img{
-	width: 100%;
+.banner-point-active{
+	display: inline-block;
+	border-radius: 50%;
+	width: 12px;
+	height: 12px;
+	margin-right: 12px;
+	background-color: #000000;
 }
 
 /*产品介绍*/
@@ -182,7 +197,7 @@ a{
 	margin: 40px auto;
 	overflow: hidden;
 }
-.course-list{
+.course-list-area{
 	width: 76%;
 	float: left;
 }
@@ -232,10 +247,10 @@ a{
 	width: 210px;
 	box-shadow: 0 2px 2px #ccc;
 	background-color: #fff;
+	padding-left: 20px;
 }
 .hot-ranking h3{
 	font-size: 18px;
-	padding-left: 20px;
 	border-bottom: 1px solid #ecebcb;
 	height: 50px;
 	line-height: 50px;
@@ -244,7 +259,6 @@ a{
 }
 .hot-ranking-list{
 	margin-top: 5px 0;
-	padding-left: 20px;
 }
 
 /*底部*/

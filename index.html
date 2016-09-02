@@ -4,7 +4,6 @@
 	<meta charset="UTF-8">
 	<title>网易交易产品部</title>
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
-	<script src="./js/main.js"></script>
 </head>
 <body>
 	<!-- 顶部通知条 -->
@@ -39,8 +38,8 @@
 	</div>
 	<!-- 轮播图 -->
 	<div class="banner">
-		<ul class="banner-images">
-			<li class="banner-image">
+		<ul id="banner-images">
+			<li class="banner-image-active">
 				<img src="img/banner1.jpg">
 			</li>
 			<li class="banner-image">
@@ -50,10 +49,10 @@
 				<img src="img/banner3.jpg">
 			</li>
 		</ul>
-		<ul class="banner-points">
-			<li class="banner-point"></li>
-			<li class="banner-point"></li>
-			<li class="banner-point"></li>
+		<ul id="banner-points">
+			<li class="banner-point-active" data-slide-to="0"></li>
+			<li class="banner-point" data-slide-to="1"></li>
+			<li class="banner-point" data-slide-to="2"></li>
 		</ul>
 	</div>
 	<!-- 产品介绍 -->
@@ -95,11 +94,12 @@
 	</div>
 	<!-- 内容区 -->
 	<div class="content-area">
-		<div class="course-list">
+		<div class="course-list-area">
 			<ul class="tab-btn-place">
 				<li class="tab-btn">产品设计</li>
 				<li class="tab-btn">编程语言</li>
 			</ul>
+			<ul class="course-list"></ul>
 		</div>
 		<div class="side-bar">
 			<div class="organization-intro">
@@ -147,5 +147,6 @@
 			</div>
 		</div>
 	</div>
+	<script src="./js/main.js"></script>
 </body>
 </html>
