@@ -1,7 +1,7 @@
 /*
  *@method : 获取当前active的item
  **/
-var getCurrnetIndex = function(items) {
+var getCurrentIndex = function(items) {
 	var currentIndex, i, len = items.length;
 	for (i = 0; i < len; i++) {
 		// 正则匹配
@@ -40,7 +40,7 @@ var banner = function(){
 
 	// 自动替换
 	var autoNext = function() {
-		var currentIndex = getCurrnetIndex(bannerImages), targetIndex;	
+		var currentIndex = getCurrentIndex(bannerImages), targetIndex;	
 		if (currentIndex == (bannerImages.length - 1)) {
 			targetIndex = 0;
 		} else {
@@ -59,7 +59,7 @@ var banner = function(){
 	}
 	pointsRoot.addEventListener('click', function(e){
 		if (e.target.tagName == 'LI') {
-			var currentIndex = getCurrnetIndex(bannerImages);
+			var currentIndex = getCurrentIndex(bannerImages);
 			var targetIndex = parseInt(e.target.getAttribute("data-slide-to"));
 
 			bannerNext(currentIndex, targetIndex);
@@ -67,3 +67,68 @@ var banner = function(){
 	}, false);
 };
 banner();
+
+/*
+ *@method : 封装ajax方法
+ *@params : url:请求地址
+ *			options:{type:请求方法;data:请求参数}
+ *			callback:{onsuccess:成功回调;onfailed:失败回调}
+**/
+var ajax = function(url, options, callback) {
+	var xhr = new XMLHttpRequest();
+	var method, queryString = "", requestURL = url;
+	var requestParams = [];
+
+	requestURL += (requestURL.indexOf('?') == -1 ? '?' : '&');
+	method = options.type;
+
+	if (options.data) {
+		if (typeof options.data == 'string') {
+			queryString == options.data;
+		} else {
+			for(var para in options.data) {
+				var key = encodeURIComponent(para);
+				var value = encodeURIComponent(options.data[para]);
+				requestParams.push(key + "=" + value);
+			}
+			queryString = requestParams.join('&');
+			requestURL += queryString;
+		}
+	}
+
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4) {
+			if (xhr.status >= 200 && xhr.status < 300) {
+				callback.onsuccess(xhr);
+			} else {
+				callback.onfailed(xhr);
+			}
+		}
+	};
+
+	if (method == 'get') {
+		xhr.open(method, requestURL, true);
+		xhr.send(null);
+	} else {
+		xhr.open(method, url, true);
+		xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+		xhr.send(queryString);
+	}
+}
+
+var getHotRanking = function() {
+	var onSuccess = function(xhr) {
+		console.log(xhr.responseText);
+	};
+
+	var url = "http://study.163.com/webDev/hotcouresByCategory.htm";
+	var callback = {
+		onsuccess : onSuccess
+	};
+	var options = {
+		type : 'get'
+	}
+	ajax(url, options, callback);
+};
+
+getHotRanking();
