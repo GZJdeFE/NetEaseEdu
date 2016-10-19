@@ -99,7 +99,7 @@ var ajax = function(url, options, callback) {
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4) {
 			if (xhr.status >= 200 && xhr.status < 300) {
-				callback.onsuccess(xhr);
+				callback.onsuccess(JSON.parse(xhr.responseText));
 			} else {
 				callback.onfailed(xhr);
 			}
@@ -116,10 +116,11 @@ var ajax = function(url, options, callback) {
 	}
 }
 
+/*
+ *@method : 获取最热排行
+**/
 var getHotRanking = function() {
-	var onSuccess = function(xhr) {
-		console.log(xhr.responseText);
-	};
+	var onSuccess = parseHotRankingData;
 
 	var url = "http://study.163.com/webDev/hotcouresByCategory.htm";
 	var callback = {
@@ -130,5 +131,28 @@ var getHotRanking = function() {
 	}
 	ajax(url, options, callback);
 };
-
 getHotRanking();
+
+/*
+ *@method : 对最热排行的数据进行解析和展示
+ *@params : data:返回的数据
+**/
+function parseHotRankingData(data) {
+	var hotRankingList = document.getElementById('hot-ranking-list');
+	hotRankingList.innerHTML = '';
+	var html = '';
+	console.log(data.length);
+	for (var i = 0; i < data.length; i++) {
+		html += '<li class="hot-course">' +
+					'<img class="hot-course-img" src="' + data[i].smallPhotoUrl + '">' + 
+					'<div class="hot-course-box">' + data[i].name + '</h3>'
+						'<h3 class="hot-course-name">' +
+						'<p class="hot-course-num">' +
+							'<span class="hot-course-num-icon"></span>' +
+							'<span class="hot-course-count">' + data[i].learnerCount + '</span>' +
+						'</p>' +
+					'</div>' +
+				'</li>'
+	}
+	hotRankingList.innerHTML = html;
+}

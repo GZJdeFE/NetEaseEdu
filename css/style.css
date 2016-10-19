@@ -182,8 +182,9 @@ a{
 
 /*图片展示*/
 .image-present{
-	width: 100%;
+	width: 1100px;
 	height: 220px;
+	margin: 0 auto;
 }
 .image-present img{
 	height: 220px;
@@ -257,8 +258,11 @@ a{
 	width: 190px;
 	margin: 0 0;
 }
-.hot-ranking-list{
+#hot-ranking-list{
 	margin-top: 5px 0;
+}
+#course-list{
+	width: 209px;
 }
 
 /*底部*/
