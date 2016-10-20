@@ -154,5 +154,17 @@ function parseHotRankingData(data) {
 					'</div>' +
 				'</li>';
 	}
-	hotRankingList.innerHTML = html;
+	hotRankingList.innerHTML = html+html;
+	var index = 0;
+	setInterval(function() {	
+		var ul = document.getElementById('hot-ranking-list');
+		var li = ul.getElementsByTagName('li')[0];
+		index++;
+		li.style.cssText = 'margin-top: ' + (-68*index) + 'px;';
+		if (index == 21) {
+			li.style.marginTop == '';
+			index = 0;
+			li.transition = 'margin 0ms';
+		}
+	}, 5000);
 }

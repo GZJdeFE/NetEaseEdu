@@ -193,7 +193,7 @@ a{
 
 /*内容区*/
 .content-area{
-	width: 1100px;
+	width: 1200px;
 	height: 1500px;
 	margin: 40px auto;
 	overflow: hidden;
@@ -204,6 +204,7 @@ a{
 }
 .side-bar{
 	width: 22%;
+	height: 1460px;
 	float: right;
 	margin: 40px 0;
 }
@@ -246,6 +247,7 @@ a{
 .hot-ranking{
 	margin-top: 20px;
 	width: 210px;
+	height: 1150px;
 	box-shadow: 0 2px 2px #ccc;
 	background-color: #fff;
 	padding-left: 20px;
@@ -259,9 +261,11 @@ a{
 	margin: 0 0;
 }
 #hot-ranking-list{
+	height: 1070px;
 	margin-top: 5px 0;
 	list-style: none;
 	padding-left: 0;
+	overflow: hidden;
 }
 .hot-course{
 	margin-right: 20px;
@@ -269,6 +273,7 @@ a{
 	width: 190px;
 	overflow: hidden;
 	position: relative;
+	transition: 200ms margin;
 }
 .hot-course-box{
 	width: 128px;
@@ -286,6 +291,15 @@ a{
 .hot-course-img{
 	width: 50px;
 	height: 50px;
+}
+.hot-course-num-icon{
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background: url(../img/sprite.png) no-repeat;
+}
+.hot-course-count{
+	margin-left: 10px;
 }
 #course-list{
 	width: 209px;
