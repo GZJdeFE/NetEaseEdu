@@ -145,14 +145,14 @@ function parseHotRankingData(data) {
 	for (var i = 0; i < data.length; i++) {
 		html += '<li class="hot-course">' +
 					'<img class="hot-course-img" src="' + data[i].smallPhotoUrl + '">' + 
-					'<div class="hot-course-box">' + data[i].name + '</h3>'
-						'<h3 class="hot-course-name">' +
+					'<div class="hot-course-box">' + 
+						'<h3 class="hot-course-name">' + data[i].name + '</h3>' +
 						'<p class="hot-course-num">' +
 							'<span class="hot-course-num-icon"></span>' +
 							'<span class="hot-course-count">' + data[i].learnerCount + '</span>' +
 						'</p>' +
 					'</div>' +
-				'</li>'
+				'</li>';
 	}
 	hotRankingList.innerHTML = html;
 }
