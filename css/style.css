@@ -210,6 +210,7 @@ a{
 }
 .tab-btn-place{
 	margin: 40px 0;
+	padding-left: 0;
 }
 .tab-btn{
 	list-style: none;

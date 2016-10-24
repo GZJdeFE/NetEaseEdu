@@ -16,7 +16,7 @@ var getCurrentIndex = function(items) {
 /*
  *@method : 轮播图
  **/
-var banner = function(){
+function banner(){
 	// 获取images和points的所有元素
 	var imagesRoot = document.getElementById('banner-images');
 	var bannerImages = imagesRoot.getElementsByTagName("li");
@@ -120,15 +120,13 @@ var ajax = function(url, options, callback) {
  *@method : 获取最热排行
 **/
 var getHotRanking = function() {
-	var onSuccess = parseHotRankingData;
-
 	var url = "http://study.163.com/webDev/hotcouresByCategory.htm";
 	var callback = {
-		onsuccess : onSuccess
+		onsuccess: parseHotRankingData
 	};
 	var options = {
-		type : 'get'
-	}
+		type: 'get'
+	};
 	ajax(url, options, callback);
 };
 getHotRanking();
@@ -141,7 +139,6 @@ function parseHotRankingData(data) {
 	var hotRankingList = document.getElementById('hot-ranking-list');
 	hotRankingList.innerHTML = '';
 	var html = '';
-	console.log(data.length);
 	for (var i = 0; i < data.length; i++) {
 		html += '<li class="hot-course">' +
 					'<img class="hot-course-img" src="' + data[i].smallPhotoUrl + '">' + 
@@ -167,4 +164,59 @@ function parseHotRankingData(data) {
 			li.transition = 'margin 0ms';
 		}
 	}, 5000);
+}
+
+function bindEvent(){
+	var pdBtn = document.getElementById('product-design');
+	var plBtn = document.getElementById('programme-lang');
+	pdBtn.addEventListener('click', getCoursesForProduct, false);
+	plBtn.addEventListener('click', getProgrammeLang, false);
+}
+bindEvent();
+
+
+/**
+ *@method 获取产品设计
+**/
+function getCoursesForProduct() {
+	var url = "http://study.163.com/webDev/couresByCategory.htm";
+	var callback = {
+		onsuccess: parseProductData
+	};
+	var options = {
+		type: 'get',
+		data: {
+			pageNo: 1,
+			psize: 20,
+			type: 10
+		}
+	};
+
+	ajax(url, options, callback);
+}
+getCoursesForProduct();
+
+/*
+ *@method : 对产品设计的数据进行解析和展示
+ *@params : data:返回的数据
+**/
+function parseProductData(data) {
+	var couresList = document.getElementById('coures-list');
+	couresList.innerHTML = '';
+	var html = '';
+	for (var i = 0; i < data.list.length; i++) {
+		html += '<li class="coures-box">' + 
+					'<img class="coures-box-img" src="' + data.list[i].bigPhotoUrl + '">' +
+					'<div class="course-box-content">' +
+						'<h3 class="">' +
+					'</div>' + 
+				'</li>';
+	}
+}
+
+/**
+ *@method 获取编程语言
+**/
+function getProgrammeLang() {
+
 }
